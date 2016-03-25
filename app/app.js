@@ -1,4 +1,4 @@
-angular.module('angularTest', ['angularTest.main', 'angularTest.done'])
+angular.module('angularTest', [])
 
 .config(function($stateProvider, $urlRouterProvider, $httpProvider) {
   $urlRouterProvider.otherwise('/');
