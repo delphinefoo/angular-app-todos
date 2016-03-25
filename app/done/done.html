@@ -1,0 +1,9 @@
+<div class="row" id="done">
+  <div class="col-md-4 col-md-offset-4">
+    <a ui-sref="main">Go to list of all tasks</a>
+    <h3>Completed Tasks</h3>
+    <ul>
+      <li ng-click="todo.completed = !todo.completed" ng-repeat="todo in todos" ng-if="todo.completed" class="completed">{{todo.name}}</li>
+    </ul>
+  </div>
+</div>

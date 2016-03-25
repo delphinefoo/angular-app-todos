@@ -1,6 +1,7 @@
 angular.module('angularTest', [
   'angularTest.main',
   'angularTest.done',
+  'angularTest.services',
   'ui.router'])
 
 .config(function($stateProvider, $urlRouterProvider, $httpProvider) {
@@ -13,7 +14,7 @@ angular.module('angularTest', [
     })
     .state('done', {
       url: '/done',
-      templateUrl: 'app/main/done.html',
+      templateUrl: 'app/done/done.html',
       controller: 'done.controller'
     })
 })
