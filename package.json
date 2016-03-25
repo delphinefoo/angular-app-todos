@@ -1,0 +1,23 @@
+{
+  "name": "angular-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/delphinefoo/angular-app-todos.git"
+  },
+  "author": "Delphine Foo-Matkin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/delphinefoo/angular-app-todos/issues"
+  },
+  "homepage": "https://github.com/delphinefoo/angular-app-todos#readme",
+  "dependencies": {
+    "angular": "^1.5.2",
+    "ui-router": "^1.0.0-alpha0"
+  }
+}
