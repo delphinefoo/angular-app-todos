@@ -1,10 +1,9 @@
 angular.module('angularTest.main', [])
 
-.controller('main.controller', ['$scope', '$state', 'todoStore', function($scope, $state, todoStore) {
-
+.controller('main.controller', ['$scope', '$state', 'todoStore', '$window', function($scope, $state, todoStore, $window) {
+  $scope.todos = todoStore;
   $scope.newTodo = '';
   todoStore.get().then(function(res) {
-    console.log(res)
     $scope.todos = res;
   })
 
@@ -12,7 +11,7 @@ angular.module('angularTest.main', [])
     var newTodo = {
       name: $scope.newTodo,
       completed: false
-    }
+    };
     todoStore.insert(newTodo)
       .then(function(res) {
         $scope.newTodo = '';
@@ -20,7 +19,4 @@ angular.module('angularTest.main', [])
       })
   };
 
-  $scope.completeTodo = function() {
-
-  };
 }])

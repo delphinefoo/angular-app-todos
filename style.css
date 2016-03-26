@@ -7,10 +7,10 @@ li {
   cursor: default;
 }
 
+label {
+  font-weight: 300;
+}
 .row {
   margin: 100px;
 }
 
-.completed {
-  text-decoration: line-through;
-}

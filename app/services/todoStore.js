@@ -1,6 +1,6 @@
 angular.module('angularTest.services', [])
 
-.factory('todoStore', function($http) {
+.factory('todoStore', ['$rootScope', '$http','$window', function($rootScope, $http, $window) {
   var data = {
     todos: [],
 
@@ -22,8 +22,25 @@ angular.module('angularTest.services', [])
         }, function(err) {
           console.log(err);
         })
+    },
+
+    toggle: function(todo) {
+
+      var originalTodos = store.todos.slice(0);
+
+      var completeTodos = [];
+      var incompleteTodos = [];
+      data.todos.forEach(function (todo) {
+        if (todo.completed) {
+          completeTodos.push(todo);
+        } else {
+          incompleteTodos.push(todo);
+        }
+      });
     }
+
+
   }
 
   return data;
-})
+}])
