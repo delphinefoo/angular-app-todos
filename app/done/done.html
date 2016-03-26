@@ -3,7 +3,7 @@
     <a ui-sref="main">Go to list of all tasks</a>
     <h3>Completed Tasks</h3>
     <ul>
-      <li ng-repeat="todo in todos" ng-if="todo.completed" class="completed">
+      <li ng-repeat="todo in todos" ng-if="todo.completed === true" class="completed">
         <input type="checkbox" ng-click="toggleCompleted(todo)">
         <label>{{todo.name}}</label>
       </li>

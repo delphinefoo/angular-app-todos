@@ -26,7 +26,6 @@ angular.module('angularTest.services', [])
 
     toggle: function(todo, index) {
       data.todos[index].completed = !data.todos[index].completed;
-      console.log(data.todos);
       return data.todos;
     }
 
@@ -35,3 +34,4 @@ angular.module('angularTest.services', [])
 
   return data;
 }])
+

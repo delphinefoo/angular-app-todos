@@ -1,7 +1,6 @@
 angular.module('angularTest.main', [])
 
 .controller('main.controller', ['$scope', '$state', 'todoStore', '$window', function($scope, $state, todoStore, $window) {
-  $scope.todos = todoStore;
   $scope.newTodo = '';
   todoStore.get().then(function(res) {
     $scope.todos = res;
@@ -17,6 +16,7 @@ angular.module('angularTest.main', [])
       .then(function(res) {
         $scope.newTodo = '';
         $scope.todos = res;
+        console.log('in insert: ', res);
       })
   };
 
