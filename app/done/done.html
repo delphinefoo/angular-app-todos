@@ -4,7 +4,7 @@
     <h3>Completed Tasks</h3>
     <ul>
       <li ng-repeat="todo in todos" ng-if="todo.completed" class="completed">
-        <input type="checkbox" ng-model="todo.completed" ng-change="toggleCompleted(todo)">
+        <input type="checkbox" ng-click="toggleCompleted(todo)">
         <label>{{todo.name}}</label>
       </li>
     </ul>

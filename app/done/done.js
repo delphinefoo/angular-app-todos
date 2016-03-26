@@ -4,5 +4,8 @@ angular.module('angularTest.done', [])
   todoStore.get().then(function(res) {
     $scope.todos = res;
   });
+  $scope.toggleCompleted = function(todo) {
+    todoStore.toggle(todo, $scope.todos.indexOf(todo));
+  }
 
 }])

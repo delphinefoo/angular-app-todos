@@ -24,19 +24,10 @@ angular.module('angularTest.services', [])
         })
     },
 
-    toggle: function(todo) {
-
-      var originalTodos = store.todos.slice(0);
-
-      var completeTodos = [];
-      var incompleteTodos = [];
-      data.todos.forEach(function (todo) {
-        if (todo.completed) {
-          completeTodos.push(todo);
-        } else {
-          incompleteTodos.push(todo);
-        }
-      });
+    toggle: function(todo, index) {
+      data.todos[index].completed = !data.todos[index].completed;
+      console.log(data.todos);
+      return data.todos;
     }
 
 
