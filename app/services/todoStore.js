@@ -25,10 +25,14 @@ angular.module('angularTest.services', [])
     },
 
     toggle: function(todo, index) {
-      data.todos[index].completed = !data.todos[index].completed;
-      return data.todos;
+      return $http.put('/api/todos', { index: index })
+        .then(function(res) {
+          data.todos[index].completed = !data.todos[index].completed;
+          return data.todos;
+        }, function(err) {
+          console.log(err);
+        })
     }
-
 
   }
 

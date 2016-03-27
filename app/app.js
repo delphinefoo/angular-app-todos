@@ -6,6 +6,7 @@ angular.module('angularTest', [
 
 .config(function($stateProvider, $urlRouterProvider, $httpProvider) {
   $httpProvider.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=utf-8';
+  $httpProvider.defaults.headers.put['Content-Type'] = 'application/x-www-form-urlencoded;charset=utf-8';
 
   var param = function(obj) {
     var query = '', name, value, fullSubName, subName, subValue, innerObj, i;
@@ -40,8 +41,9 @@ angular.module('angularTest', [
 
   // Override $http service's default transformRequest
   $httpProvider.defaults.transformRequest = [function(data) {
-    return angular.isObject(data) && String(data) !== '[object File]' ? param(data) : data;
+    return angular.isObject(data) ? param(data) : data;
   }];
+
 
   $urlRouterProvider.otherwise('/');
   $stateProvider

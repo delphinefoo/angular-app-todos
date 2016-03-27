@@ -4,7 +4,7 @@ angular.module('angularTest.main', [])
   $scope.newTodo = '';
   todoStore.get().then(function(res) {
     $scope.todos = res;
-    console.log($scope.todos);
+    console.log($scope.todos[$scope.todos.length - 1]);
   })
 
   $scope.addTodo = function() {
@@ -16,12 +16,14 @@ angular.module('angularTest.main', [])
       .then(function(res) {
         $scope.newTodo = '';
         $scope.todos = res;
-        console.log('in insert: ', res);
       })
   };
 
   $scope.toggleCompleted = function(todo) {
-    todoStore.toggle(todo, $scope.todos.indexOf(todo));
+    todoStore.toggle(todo, $scope.todos.indexOf(todo))
+      .then(function(res) {
+        $scope.todos = res;
+      });
   }
 
 }])

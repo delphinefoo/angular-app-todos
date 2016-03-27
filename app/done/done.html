@@ -4,8 +4,10 @@
     <h3>Completed Tasks</h3>
     <ul>
       <li ng-repeat="todo in todos" ng-if="todo.completed === true" class="completed">
-        <input type="checkbox" ng-click="toggleCompleted(todo)">
-        <label>{{todo.name}}</label>
+        <input type="checkbox" checked ng-click="toggleCompleted(todo)">
+        <label>
+          <span class="completed">{{todo.name}}</span>
+        </label>
       </li>
     </ul>
   </div>

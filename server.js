@@ -20,7 +20,6 @@ var todos = [
 ];
 
 app.use(express.static(__dirname));
-// app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/api/todos', function(req,res) {
@@ -33,6 +32,12 @@ app.post('/api/todos', function(req,res) {
   todos.push(todo);
   res.send(todos);
 });
+
+app.put('/api/todos', function(req,res) {
+  var index = parseInt(req.body.index);
+  todos[index].completed = !todos[index].completed;
+  res.send(todos);
+})
 
 
 app.listen(3000, function() {
